@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> <%= @team.name %> </title>
+</head>
+<body>
+	<h1> <%= @team.name %>: </h1>
+	<div>
+		<ul>
+			<% if @team.win %>
+				<li> <%= "Mission Completed" %> </li> 
+			<% else %>
+				<li> <%= "Mission Failed" %> </li>
+			<% end %>
+		</ul>
+	</div>
+	<%= button_to "See the other teams", teams_path, method: :get %>
+	<%= button_to "Change the name of #{@team.name}", edit_team_path, method: :get %>
+	<%= button_to "Delete this #{@team.name}", team_path(@team), method: :delete %>
+</body>
+</html>
