@@ -1,0 +1,19 @@
+<div>
+    <h2>MY CHARACTERS</h2>
+    
+    <% @characters.each do | character | %>
+    
+        <ul>
+            <ol>
+                <li>Name: <%= character.name %></li>
+                <li>Intellect: <%= character.intellect %></li>
+                <li>Speed: <%= character.speed %></li>
+                <li>Attack: <%= character.attack %></li>
+            </ol>
+        </ul>
+    <% end %>
+
+</div>
+
+<% if @characters.length == 0 %>
+<%= link_to "Create New Character", new_character_path %>
