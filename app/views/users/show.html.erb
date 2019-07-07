@@ -4,7 +4,7 @@
 	<title> <%= @user.name %> </title>
 </head>
 <body>
-    <h2>My Characters</h2>
+    <h2> <%= @user.name %>'s Characters</h2>
     <div>
     <% @characters.each do | character | %>
         <ul>
@@ -21,8 +21,9 @@
     </div>
 
     <% if @characters.length == 0 %>
-    <%= button_to "Create New Character", new_character_path %>
-    <%= button_to "Delete this user", user_path(@user), method: :delete %>
+        <%= button_to "Create New Character", new_character_path %>
+        <%= button_to "Delete this user", user_path(@user), method: :delete %>
+    <% end %>
 </body>
 </html>
 
