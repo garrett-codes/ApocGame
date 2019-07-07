@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:show, :destroy]
+    before_action :find_user, only: [:show, :edit, :destroy]
 
     def new
         @user = User.new
@@ -12,6 +12,19 @@ class UsersController < ApplicationController
 
     def show
         @characters = @user.characters
+    end
+
+    def edit
+    end
+
+    def update
+        @user.update(user_params)
+        redirect_to user_path(@user)
+    end
+
+    def destroy
+  	    @user.destroy
+  	    redirect_to new_user_path
     end
 
 
