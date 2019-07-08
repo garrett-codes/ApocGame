@@ -3,16 +3,19 @@ class AuthController < ApplicationController
    end
 
     def create 
-  	  @user = User.find_by(name: params[:name])
-   	  if @user && @user.atuhenticate(params[:password])
+  	  @user = User.find_by(name: params[:username])
+       #byebug
+   	  if @user && @user.authenticate(params[:password])
   	    flash[:message] = "Logging into #{@user.name}"
-	    redirect_to user_path(@user)
+        session[:user_id] = @user.id
+	      redirect_to user_path(@user)
 	  else
 	    flash[:message] = "Invalid Username or Password."
 	    redirect_to "/login"
 	  end
 	end
-  # def destroy
-
-  # end
+  def destroy
+    session[:user_id] = nil
+    redirect_to "/login"
+  end
 end

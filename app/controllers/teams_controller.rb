@@ -13,13 +13,11 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @user_id = session[:user_id]
-    @logged_in = !!@user_id
-    byebug
     if @logged_in
-      @current_user = User.find(@user_id)
-      @team = Team.create(team_params)
+      # byebug
+      @team = Team.create(name: team_params[:name], user_id: @current_user.id)
     end
+    session[:team_id] = @team.id
     redirect_to new_character_path
   end
 

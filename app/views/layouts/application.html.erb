@@ -10,16 +10,17 @@
   </head>
 
   <body>
-    <% if @logged_in %>
-      <h2> </h2>
-      <p> 
-        Logged in as <%=@current_user.name %> 
-      </p>
-      <%= button_to "Log Out", "/auth", method: :delete %>
-      <% else  %>
-        <%= link_to "login", "/login" %>
-        <%= link_to "sign_up", new_user_path %>
-      <% end %>
+    <header>
+      <% if @logged_in %>
+        <p> 
+          Logged in as <%=@current_user.name %> 
+        </p>
+        <%= button_to "Log Out", "/auth", method: :delete %>
+        <% else  %>
+          <%= link_to "login", "/login" %>
+          <%= link_to "sign_up", new_user_path %>
+        <% end %>
+      </header>
     <%= yield %>
   </body>
 </html>
