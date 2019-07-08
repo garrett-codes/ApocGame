@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  
+
   def index
     @teams = Team.all
   end
@@ -13,8 +13,14 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.create(team_params)
-    redirect_to team_path(@team)
+    @user_id = session[:user_id]
+    @logged_in = !!@user_id
+    byebug
+    if @logged_in
+      @current_user = User.find(@user_id)
+      @team = Team.create(team_params)
+    end
+    redirect_to new_character_path
   end
 
   def edit 
@@ -36,6 +42,6 @@ class TeamsController < ApplicationController
   private
 
     def team_params
-      params.require(:team).permit(:name, :win)
+      params.require(:team).permit(:name, :win, :user_id)
     end
 end

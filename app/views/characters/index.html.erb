@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Characters </title>
+</head>
+<body>
+	<h1> Characters: </h1>
+	<div>
+		<ul>
+			<% @characters.each do |character| %>
+				<li> <%= link_to character.name, character_path(character) %> </li>
+			<% end %>
+		</ul>
+	</div>
+</body>
+</html>

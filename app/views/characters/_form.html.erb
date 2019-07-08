@@ -1,0 +1,11 @@
+<%= form_for @character do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :attack %>
+	<%= f.number_field :attack %>
+	<%= f.label :speed %>
+	<%= f.number_field :speed %>
+	<%= f.label :intellect %>
+	<%= f.number_field :intellect %>
+	<%= f.submit "Create this character"%>
+<% end %>

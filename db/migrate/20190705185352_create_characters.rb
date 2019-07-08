@@ -5,7 +5,6 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer :intellect
       t.integer :attack
       t.integer :speed
-      t.belongs_to :user, foreign_key: true
       t.belongs_to :team, foreign_key: true
       t.timestamps
     end

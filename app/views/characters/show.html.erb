@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> <%= @character.name %> </title>
+</head>
+<body>
+	<h1> <%= @character.name %>: </h1>
+	<div>
+		<ul>
+            <li>Name: <%= @character.name %></li>
+            <li>Intellect: <%= @character.intellect %></li>
+            <li>Speed: <%= @character.speed %></li>
+            <li>Attack: <%= @character.attack %></li> 
+        </ul>
+    </div>
+    <div> 
+    	<%= button_to "Edit this character", character_path(@character) %>
+        <%= button_to "Delete this character", character_path(@character), method: :delete %>
+        <%= button_to "See all characters", characters_path, method: :get %>
+    </div>
+</body>
+</html>

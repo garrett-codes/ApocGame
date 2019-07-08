@@ -7,11 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.destroy_all
-
-User.create(name: "user1")
-
-Team.destroy_all
-
-Team.create(name: "team 1", win: false)
+Character.create(name: "character_test", user_id: 5, team_id: 5)
 

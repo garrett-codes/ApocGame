@@ -1,4 +1,4 @@
 class Character < ApplicationRecord
   belongs_to :team
-  belongs_to :user
+  has_one :user, through: :team
 end

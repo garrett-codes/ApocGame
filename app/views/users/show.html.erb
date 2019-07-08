@@ -4,26 +4,14 @@
 	<title> <%= @user.name %> </title>
 </head>
 <body>
-    <h2> <%= @user.name %>'s Characters</h2>
-    <div>
-    <% @characters.each do | character | %>
+    <h1> <%= @user.name %>: </h1>
         <ul>
-            <ol>
-                <li>Name: <%= character.name %></li>
-                <li>Intellect: <%= character.intellect %></li>
-                <li>Speed: <%= character.speed %></li>
-                <li>Attack: <%= character.attack %></li>
-            </ol>  
+            <% @user.teams do |team| %>
+                <li> <%= link_to team.character.name, character_path(character) %> </li>
+            <% end %>
         </ul>
-        <%= button_to "Edit this character", character_path(character) %>
-        <%= button_to "Delete this character", character_path(character), method: :delete %>
-    <% end %>
-    </div>
-
-    <% if @characters.length == 0 %>
-        <%= button_to "Create New Character", new_character_path %>
-        <%= button_to "Delete this user", user_path(@user), method: :delete %>
-    <% end %>
+    <%= button_to "Start a campaign", new_team_path, method: :get%>
+    <%= button_to "Delete this user", user_path(@user), method: :delete %>
 </body>
 </html>
 
