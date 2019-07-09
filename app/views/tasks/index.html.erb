@@ -6,10 +6,14 @@
 <body>
 	<h1> Do you want to begin this Campaign? </h1>
 	<div>
-		<button onClick="<%= f.start %>"></button>
+		<%= form_tag @task do |f| %>
+			<%= f.submit "Begin" %>
+		<% end %>
 	</div>
 	<div>
-		<button onClick="<%= f.quit %>"></button>
+		<%= form_tag @task do |f| %>		
+			<%= f.submit "Quit" %>
+		<% end %>
 	</div>
 </body>
 </html>

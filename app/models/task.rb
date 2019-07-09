@@ -23,5 +23,11 @@ class Task < ApplicationRecord
 
   def start
     self.begin = true
+    self.save
+  end
+
+  def quit
+    self.begin = false
+    self.save
   end
 end
