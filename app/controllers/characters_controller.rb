@@ -13,7 +13,8 @@ class CharactersController < ApplicationController
   def create
   	@character = Character.create(name: character_params[:name], attack: character_params[:attack], speed: character_params[:speed], intellect: character_params[:intellect], team_id: session[:team_id])
     # byebug
-  	redirect_to user_path(@character.user)
+    session[:team_id] = @team.id
+  	redirect_to new_task_path
   end
 
   def show
