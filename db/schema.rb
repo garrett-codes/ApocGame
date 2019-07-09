@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_143409) do
+ActiveRecord::Schema.define(version: 2019_07_09_203347) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -20,17 +20,13 @@ ActiveRecord::Schema.define(version: 2019_07_09_143409) do
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "completed_tasks", default: 0
+    t.integer "remaining_tasks", default: 5
     t.index ["team_id"], name: "index_characters_on_team_id"
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.integer "character_id"
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "begin", default: false
-    t.index ["character_id"], name: "index_tasks_on_character_id"
-  end
+# Could not dump table "tasks" because of following StandardError
+#   Unknown type 'id' for column 'next1'
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
