@@ -25,8 +25,21 @@ ActiveRecord::Schema.define(version: 2019_07_09_203347) do
     t.index ["team_id"], name: "index_characters_on_team_id"
   end
 
-# Could not dump table "tasks" because of following StandardError
-#   Unknown type 'id' for column 'next1'
+  create_table "tasks", force: :cascade do |t|
+    t.integer "character_id"
+    t.string "task_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", default: "And so it begins..."
+    t.string "situation"
+    t.string "choice1"
+    t.string "choice2"
+    t.string "result1"
+    t.string "result2"
+    t.integer "next1"
+    t.integer "next2"
+    t.index ["character_id"], name: "index_tasks_on_character_id"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"

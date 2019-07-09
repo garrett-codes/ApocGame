@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :setup_auth
+  before_action :setup_auth, only: [:auth_controller, :characters_controller, :tasks_controller, :teams_controller, :users_controller]
 
   def setup_auth
     @user_id = session[:user_id]

@@ -6,7 +6,7 @@ class AddNewColumnsToTask < ActiveRecord::Migration[5.2]
     add_column :tasks, :choice2, :string
     add_column :tasks, :result1, :string
     add_column :tasks, :result2, :string
-    add_column :tasks, :next1, :id
-    add_column :tasks, :next2, :id
+    add_column :tasks, :next1, :integer
+    add_column :tasks, :next2, :integer
   end
 end
