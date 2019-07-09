@@ -1,5 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :character
+  has_one :team, through: :character
+  has_one :user, through: :team
 
   def top_stat
   	stat_arr = []
@@ -17,5 +19,9 @@ class Task < ApplicationRecord
     else
       return nil
     end
+  end
+
+  def start
+    self.begin = true
   end
 end
