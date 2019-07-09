@@ -15,7 +15,7 @@ class CharactersController < ApplicationController
     # byebug
     session[:character_id] = @character.id
     # byebug
-  	redirect_to new_task_path
+  	redirect_to tasks_path
   end
 
   def show

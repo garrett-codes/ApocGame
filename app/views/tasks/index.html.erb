@@ -6,14 +6,10 @@
 <body>
 	<h1> Do you want to begin this Campaign? </h1>
 	<div>
-		<%= form_tag @task do |f| %>
-			<%= f.submit "Begin" %>
-		<% end %>
+		<%= button_to "Begin", new_task_path, method: :get %>
 	</div>
 	<div>
-		<%= form_tag @task do |f| %>		
-			<%= f.submit "Quit" %>
-		<% end %>
+		<%= button_to "Quit", user_path(@current_user), method: :get%>
 	</div>
 </body>
 </html>
