@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     
     before_action :find_user, only: [:show, :edit, :destroy]
+    before_action :authorized
     # before_action :require_login
     # skip_before_action :require_login, only: [:index, :show, :new]
 
@@ -37,7 +38,8 @@ class UsersController < ApplicationController
 
     def destroy
   	    @user.destroy
-  	    redirect_to new_user_path
+        session[:user_id] = nil
+  	    redirect_to "/login"
     end
 
 
