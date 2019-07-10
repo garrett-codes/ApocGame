@@ -13,10 +13,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    if @logged_in
-      # byebug
-      @team = Team.create(name: team_params[:name], user_id: @current_user.id)
-    end
+    @team = Team.create(name: team_params[:name], user_id: @current_user.id)
     session[:team_id] = @team.id # need to first make user sign in after creating a user ##fix me!
     redirect_to new_character_path
   end
