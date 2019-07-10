@@ -25,7 +25,9 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    @task.update(result: params[:task][:result])
     @task.determine_path
+    # byebug
     if @task.result == @task.correct
       redirect_to task_path(Task.find(@task.next1))
     else
