@@ -22,8 +22,6 @@
 	<div>
 		<%= form_for @task do |f| %>
 			<%= f.select :result, options_for_select([@choice1, @choice2]), :class => 'genForm_dropBox' %>
-			<% @task.character.remaining_tasks -= 1 %>
-			<% @task.character.save %>
 			<%= f.submit "Next"%>
 		<% end %>
 	</div>

@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 2019_07_09_203347) do
     t.string "task_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "result1"
+    t.string "result2"
+    t.string "choice1"
+    t.string "choice2"
+    t.string "consequences"
     t.string "name", default: "And so it begins..."
     t.string "situation"
     t.string "correct", default: "Destroy the brain!"
