@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :teams
   resources :characters
+  resources :tasks
   # later add resources :users do resources :teams [:create]
   #resources :auth
   get "/login", to: "auth#new", as: "login"
