@@ -20,20 +20,11 @@
 		<% end %>
 	</div>
 	<div>
-		<% if @task.character.remaining_tasks == 5 %>
-			<%= form_for @task do |f| %>
-				<%= f.select :result, options_for_select([["Select One", ""], "Stab its heart!", "Destroy the brain!"]), :class => 'genForm_dropBox' %>
-				<% @task.character.remaining_tasks -= 1 %>
-				<% @task.character.save %>
-				<%= f.submit %>
-			<% end %>
-		<% else %>
 		<%= form_for @task do |f| %>
-				<%= f.select :result, options_for_select([["Select One", ""], "Stab its heart!", "Destroy the brain!"]), :class => 'genForm_dropBox' %>
-				<% @task.character.remaining_tasks -= 1 %>
-				<% @task.character.save %>
-				<%= f.submit %>
-			<% end %>
+			<%= f.select :result, options_for_select([@choice1, @choice2]), :class => 'genForm_dropBox' %>
+			<% @task.character.remaining_tasks -= 1 %>
+			<% @task.character.save %>
+			<%= f.submit "Next"%>
 		<% end %>
 	</div>
 </body>

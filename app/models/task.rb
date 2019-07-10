@@ -21,6 +21,17 @@ class Task < ApplicationRecord
     end
   end
 
-  def 
+  def determine_path
+    if (next1 == nil || next2 == nil)
+      answer = self.correct == self.result
+      next_task = Task.all.find {|task| task.level == 2 && task.consequence_of == answer}
+      if next_task.consequence_of
+        self.next1 = next_task.id
+        self.save
+      else
+        self.next2 = next_task.id
+        self.save
+      end
+    end
   end
 end

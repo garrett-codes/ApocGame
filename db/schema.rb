@@ -30,18 +30,15 @@ ActiveRecord::Schema.define(version: 2019_07_09_203347) do
     t.string "task_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "result1"
-    t.string "result2"
-    t.string "choice1"
-    t.string "choice2"
     t.string "name", default: "And so it begins..."
     t.string "situation"
-    t.string "correct"
-    t.string "wrong"
+    t.string "correct", default: "Destroy the brain!"
+    t.string "wrong", default: "Stab the heart!"
     t.string "result"
     t.integer "next1"
     t.integer "next2"
-    t.string "consequences"
+    t.boolean "consequence_of"
+    t.integer "level", default: 1
     t.index ["character_id"], name: "index_tasks_on_character_id"
   end
 

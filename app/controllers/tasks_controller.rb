@@ -17,9 +17,19 @@ class TasksController < ApplicationController
 
   def show
   	@task = Task.find(params[:id])
+    shuffled_choices = [@task.correct, @task.wrong]
+    @choice1 = shuffled_choices.pop
+    @choice2 = shuffled_choices.pop
+    # byebug
   end
 
   def update
-    # redirect_to
+    @task = Task.find(params[:id])
+    @task.determine_path
+    if @task.result == @task.correct
+      redirect_to task_path(Task.find(@task.next1))
+    else
+      redirect_to task_path(Task.find(@task.next2))
+    end
   end
 end
