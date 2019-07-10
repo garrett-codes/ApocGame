@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_185441) do
+ActiveRecord::Schema.define(version: 2019_07_09_203347) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,31 @@ ActiveRecord::Schema.define(version: 2019_07_05_185441) do
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "completed_tasks", default: 0
+    t.integer "remaining_tasks", default: 5
     t.index ["team_id"], name: "index_characters_on_team_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "character_id"
+    t.string "task_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "result1"
+    t.string "result2"
+    t.string "choice1"
+    t.string "choice2"
+    t.string "consequences"
+    t.string "name", default: "And so it begins..."
+    t.string "situation"
+    t.string "correct", default: "Destroy the brain!"
+    t.string "wrong", default: "Stab the heart!"
+    t.string "result"
+    t.integer "next1"
+    t.integer "next2"
+    t.boolean "consequence_of"
+    t.integer "level", default: 1
+    t.index ["character_id"], name: "index_tasks_on_character_id"
   end
 
   create_table "teams", force: :cascade do |t|

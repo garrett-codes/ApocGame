@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Current Task</title>
+</head>
+<body>
+	<h1> <%= @task.name %> </h1>
+	<div>
+		<% if @task.character.remaining_tasks == 5 %>
+			<p>
+				We need you right now for your skillset in <%=@task.task_type%>. 
+				We know you are new to this so lets start with the basics and make sure you are awake?
+				What is the best way to kill a zombie?
+
+			</p>
+		<% else %>
+			<p>
+				<%= @task.situation %>
+			</p>
+		<% end %>
+	</div>
+	<div>
+		<%= form_for @task do |f| %>
+			<%= f.select :result, options_for_select([@choice1, @choice2]), :class => 'genForm_dropBox' %>
+			<%= f.submit "Next"%>
+		<% end %>
+	</div>
+</body>
+</html>

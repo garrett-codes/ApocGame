@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
     
     before_action :find_user, only: [:show, :edit, :destroy]
-
+    before_action :authorized, only: [:index, :show, :edit, :destroy]
+    # before_action :require_login
+    # skip_before_action :require_login, only: [:index, :show, :new]
     def index
       @users = User.all
     end
@@ -14,6 +16,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
           session[:user_id] = @user.id
+          @logged_in = !!@user_id
           redirect_to user_path(@user)
         else
           redirect_to new_user_path
@@ -34,7 +37,8 @@ class UsersController < ApplicationController
 
     def destroy
   	    @user.destroy
-  	    redirect_to new_user_path
+        session[:user_id] = nil
+  	    redirect_to "/login"
     end
 
 

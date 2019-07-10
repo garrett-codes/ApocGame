@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Begin Campaign</title>
+</head>
+<body>
+	<h1> Do you want to begin this Campaign? </h1>
+	<div>
+		<%= button_to "Begin", new_task_path, method: :get %>
+	</div>
+	<div>
+		<%= button_to "Quit", user_path(@current_user), method: :get%>
+	</div>
+</body>
+</html>
