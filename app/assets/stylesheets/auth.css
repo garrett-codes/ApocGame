@@ -1,0 +1,21 @@
+#login {
+    visibility: hidden;
+}
+
+#signup {
+    visibility: hidden;
+}
+
+#logo img {
+    width: 300px;
+    margin: 1em;
+}
+
+html {
+    height: 100%;
+    background-image: url('/assets/ruins.jpg'); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover;
+    background-color: black;
+  }

@@ -2,23 +2,22 @@
 <html>
   <head>
     <title>ApocGame</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header>
+    <div class="top_bar">
+      <h3 id="logout"><%= link_to "Log Out", "/auth", method: :delete %></h3>
+    </div>
+    <header> 
       <% if @logged_in %>
-        <p> 
-          Logged in as <%=@current_user.name %> 
-        </p>
-        <%= button_to "Log Out", "/auth", method: :delete %>
+        <div class="logged_in"><p> 
+          Logged in as: <%=@current_user.name %> 
+        </p></div>
         <% else  %>
-          <%= link_to "login", "/login" %>
-          <%= link_to "sign_up", new_user_path %>
+          <div id="login"><%= link_to "login", "/login" %></div>
+          <div id="signup"><%= link_to "sign_up", new_user_path %></div>
         <% end %>
       </header>
     <%= yield %>

@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> New User </title>
+    <title> New User </title>
+    <%= stylesheet_link_tag "users.css" if controller_name == "user" %>
+    <style>
+        .logged_in {
+           visibility: hidden; 
+        }
+        .top_bar {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
-    <h1> New User </h1>
-    <%= form_for :user, url: '/users' do |f| %>
-	   Username: <%= f.text_field :name %> <br> <br>
-	   Password: <%= f.password_field :password %> <br> <br>
-	   Password Confirmation: <%= f.password_field :password_confirmation %> <br> <br>
-       <%= f.submit "Submit" %>
-    <% end %>
+    <div class="container">
+    </div>
+        <h4 style="position:absolute;top:30px;left:48%;"> Sign up </h4>
+        <%= form_for :user, url: '/users' do |f| %>
+        Username: <%= f.text_field :name %> <br> <br>
+        Password: <%= f.password_field :password %> <br> <br>
+        Password Confirmation: <%= f.password_field :password_confirmation %> <br> 
+        <%= f.submit "Submit" %>
+        <% end %>
 </body>
 </html>

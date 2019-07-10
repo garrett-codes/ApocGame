@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Users </title>
+	<title> SURVIVORS BOARD </title>
 </head>
 <body>
-	<h1> Users: </h1>
-	<div> 
+<div class="logo_pages"><img src = "assets/logo_pages.gif" alt="" style="width:15%;margin: 1em"/></div>
+	<h1> SURVIVORS BOARD </h1>
+	<div class="list"> 
 		<ul> 
 			<% @users.each do |user| %>
-				<li> <%= link_to user.name, user_path(user) %> </li>
+				<li> <%= link_to user.name.upcase, user_path(user) %> </li>
 			<% end %>
-		</ul> 
+		</ul>
 	</div>
 </body>
 </html>

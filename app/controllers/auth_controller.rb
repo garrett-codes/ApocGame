@@ -7,7 +7,6 @@ class AuthController < ApplicationController
        #byebug
    	  if @user && @user.authenticate(params[:password])
   	    flash[:message] = "Logging into #{@user.name}"
-        session[:user_id] = @user.id
 	      redirect_to user_path(@user)
 	  else
 	    flash[:message] = "Invalid Username or Password."
