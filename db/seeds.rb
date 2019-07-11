@@ -101,14 +101,14 @@ Task.create(
 	correct: "Create a distraction, and allow the rest of your team to finish up the job.", 
 	wrong: "Pick off the remaining zombies so the runner has no problem exiting the supermarket.", 
 	consequence_of: true, 
-	level: 3)
+	level: 5)
 Task.create(character_id: 1, name: "You got bit!", 
 	task_type: "attack", 
 	situation: "It was a selfless effort but now you got bit. Your team members immediately took out the the remaining zombie in the market and strapped you down. They are about to cut your arm off!",
 	correct: "Comply with the task at hand and silently pick off each zombie coming close to the community.", 
 	wrong: "Blow off your guard duties and catch up with the team even though they left you behind.", 
 	consequence_of: false, 
-	level: 3)
+	level: 5)
 #from wrong
 Task.create(
 	character_id: 1, name: "It is a good thing you listened this time...", 
@@ -117,14 +117,14 @@ Task.create(
 	correct: "Take your switch-blade and stealthily stab each stray zombie's brain. Lets try to watch out from them biting back.", 
 	wrong: "Lets play it safe and shoot them from the watch tower. You have a good shot so that should be a piece of cake.", 
 	consequence_of: true, 
-	level: 3)
+	level: 5)
 Task.create(character_id: 1, name: "This was not a wise move...", 
 	task_type: "attack", 
 	situation: "You thought your help would be useful. Of course it would have been but now you just broadsided by a pack zombies on your way to catach up with the group. They got you surrounded...",
 	correct: "Kill enough to escape and make a run for it.", 
 	wrong: "Lets see if you can take them all on.", 
 	consequence_of: false, 
-	level: 3)
+	level: 5)
 
 #level 2 intellect
 Task.create(character_id: 1, 
@@ -138,11 +138,29 @@ Task.create(character_id: 1,
 Task.create(character_id: 1, 
 	name: "There isn't time for jokes...", 
 	task_type: "intellect",
-	situation: "Quit playing around. This is a serious matter. We've been told you are smart. We were told you are smart but I don't feel like dealing with smart-asses right now. We are going to have to go on a run. We're low on supplies and since you're new to this community I figured we will break you in by taking you with us. I know you are more into the books but I want to see what you can do on the field. Meet us by the front gate in a few.", 
+	situation: "Quit playing around. This is a serious matter. We were told you are smart but I don't feel like dealing with smart-asses right now. We are going to have to go on a run. We're low on supplies and since you're new to this community I figured we will break you in by taking you with us. I know you are more into the books but I want to see what you can do on the field. Meet us by the front gate in a few.", 
 	correct: "Apologize for joking earlier. You know you can't make it outside these walls so it is better if you stood back and helped within the community.", 
 	wrong: "Get yourself to the gate with the rest of the team.", 
 	consequence_of: false, 
 	level: 2)
+
+#level 3 intellect
+Task.create(character_id: 1, 
+	name: "Good to know you're still there...", 
+	task_type: "intellect",
+	situation: "We got a busy day ahead of us. We've been told you are smart. We can definitely use some more brains in this group right now. We are going to have to go on a run. We're low on supplies and we need you to stay back and help. I am leaving you with this walkie talkie. We might need help so we will need you to be on stand-by. In the mean time we need you to plan. Try to figure out exactly how much food we should be rationing as well as all of the other concerns that go along with it.",
+	correct: "Tell them they do not have to worry and get to work on the plans.",
+	wrong: "Use this time alone to get your stuff packed and escape this community because its falling apart fast!",  
+	consequence_of: true, 
+	level: 3)
+Task.create(character_id: 1, 
+	name: "There isn't time for jokes...", 
+	task_type: "intellect",
+	situation: "Quit playing around. This is a serious matter. We've been told you are smart. We were told you are smart but I don't feel like dealing with smart-asses right now. We are going to have to go on a run. We're low on supplies and since you're new to this community I figured we will break you in by taking you with us. I know you are more into the books but I want to see what you can do on the field. Meet us by the front gate in a few.", 
+	correct: "Apologize for joking earlier. You know you can't make it outside these walls so it is better if you stood back and helped within the community.", 
+	wrong: "Get yourself to the gate with the rest of the team.", 
+	consequence_of: false, 
+	level: 3)
 
 #level 2 speed
 Task.create(character_id: 1, 
@@ -161,4 +179,3 @@ Task.create(character_id: 1,
 	wrong: "Make a quick escape while you are by yourself. They seem so mean. You're probably better off being by yourself.", 
 	consequence_of: false, 
 	level: 2)
-
