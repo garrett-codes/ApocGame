@@ -52,20 +52,18 @@ html {
  }
 
  .task_form {
-     width: 60%;
-     float:left;
+     position:relative;
  }
 
   .task_form form {
-      margin-top: 26em;
+      position:absolute;
+      top: 2em;
+      left: 10em;
       padding: 0;
-      float:left;
   }
 
   .task_form label {
     color: white;
-}
-
-.radio_button {
-    text-align: center;
+    margin-left: 2em;
+    padding: 0;
 }
