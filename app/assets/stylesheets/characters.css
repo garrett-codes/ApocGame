@@ -1,4 +1,19 @@
-// Place all the styles related to the characters controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.button_characters {
+    position: absolute;
+    bottom: 5em;
+    right: 29em;
+}
+
+.delete_character {
+    position: absolute;
+    bottom: 5em;
+    left: 35em;
+}
+
+.edit_character {
+    position: absolute;
+    bottom: 5em;
+    left: 19em;
+}

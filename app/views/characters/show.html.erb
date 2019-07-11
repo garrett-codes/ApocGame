@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1> <%= @character.name %>: </h1>
-	<div>
+	<div class="character_attr">
 		<ul>
             <li>Name: <%= @character.name %></li>
             <li>Intellect: <%= @character.intellect %></li>
@@ -13,10 +13,10 @@
             <li>Attack: <%= @character.attack %></li> 
         </ul>
     </div>
-    <div> 
-    	<%= button_to "Edit this character", character_path(@character) %>
-        <%= button_to "Delete this character", character_path(@character), method: :delete %>
-        <%= button_to "See all characters", characters_path, method: :get %>
+    <div>
+    	<div class="edit_character"><%= button_to "Edit this character", character_path(@character) %></div>
+        <div class="delete_character"><%= button_to "Delete this character", character_path(@character), method: :delete %></div>
+        <div class="button_characters"><%= button_to "See all characters", characters_path, method: :get %></div>
     </div>
 </body>
 </html>
