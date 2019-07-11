@@ -11,18 +11,30 @@
 			<%= @task.situation %>
 		</p>
 	</div>
-	
-	<div class="task_form">
-		<%= form_for @task, :style => 'float:left;' do |f| %>
-			<%= f.label @choice1.upcase %>
-			<%= f.radio_button :result, @choice1 %>
-		
-			<%= f.label @choice2.upcase %>
-			<%= f.radio_button :result, @choice2 %>
+	<% if @task.level == 0 %>
+		<div>
+			<h2> You have lost this campaign! </h2>
+			<% Team.find(session[:team_id]).win == true %>
+			<%= link_to "Done", user_path(@current_user) %>
+		</div>
+	<% elsif @task.level == 5 %>
+		<div>
+			<h2> You have won this campaign! </h2> 
+			<%= link_to "Done", user_path(@current_user) %>
+		</div>
+	<% else %>	
+		<div class="task_form">
+			<%= form_for @task, :style => 'float:left;' do |f| %>
+				<%= f.label @choice1.upcase %>
+				<%= f.radio_button :result, @choice1 %>
+			
+				<%= f.label @choice2.upcase %>
+				<%= f.radio_button :result, @choice2 %>
 
-			<%= f.submit "Next" %>
-		<% end %>
-	</div>
+				<%= f.submit "Next" %>
+			<% end %>
+		</div>
+	<% end %>
 </body>
 </html>
 
