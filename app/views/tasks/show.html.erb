@@ -6,18 +6,9 @@
 <body>
 	<h1> <%= @task.name %> </h1>
 	<div>
-		<% if @task.character.remaining_tasks == 5 %>
-			<p>
-				We need you right now for your skillset in <%=@task.task_type%>. 
-				We know you are new to this so lets start with the basics and make sure you are awake?
-				What is the best way to kill a zombie?
-
-			</p>
-		<% else %>
-			<p>
-				<%= @task.situation %>
-			</p>
-		<% end %>
+		<p>
+			<%= @task.situation %>
+		</p>
 	</div>
 	<div>
 		<%= form_for @task do |f| %>

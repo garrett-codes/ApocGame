@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_09_203347) do
+ActiveRecord::Schema.define(version: 2019_07_11_150008) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_09_203347) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", default: "And so it begins..."
-    t.string "situation"
+    t.string "situation", default: "We know you are new to this community. Let's first check if your head is in the right place. How do you \"kill\" a zombie?"
     t.string "correct", default: "Destroy the brain!"
     t.string "wrong", default: "Stab the heart!"
     t.string "result"
