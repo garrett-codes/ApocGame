@@ -2,19 +2,30 @@
 <html>
 <head>
 	<title>Current Task</title>
+	<%= stylesheet_link_tag "tasks.css" if controller_name == "tasks" %>
 </head>
 <body>
-	<h1> <%= @task.name %> </h1>
-	<div>
+	<h1 class="h1task"> <%= @task.name %> </h1>
+	<div class="situation">
 		<p>
 			<%= @task.situation %>
 		</p>
 	</div>
-	<div>
-		<%= form_for @task do |f| %>
-			<%= f.select :result, options_for_select([@choice1, @choice2]), :class => 'genForm_dropBox' %>
-			<%= f.submit "Next"%>
+	
+	<div class="task_form">
+		<%= form_for @task, :style => 'float:left;' do |f| %>
+			<%= f.label @choice1.upcase %>
+			<%= f.radio_button :result, @choice1 %>
+		
+			<%= f.label @choice2.upcase %>
+			<%= f.radio_button :result, @choice2 %>
+
+			<%= f.submit "Next" %>
 		<% end %>
 	</div>
 </body>
 </html>
+
+
+
+

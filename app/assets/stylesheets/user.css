@@ -30,6 +30,13 @@ html {
     width: 50%;
     padding: 0;
   }
+  .logout {
+    visibility: visible;
+  }
+
+  .register {
+    visibility: hidden;
+  }
 
   #logout {
     visibility: hidden;

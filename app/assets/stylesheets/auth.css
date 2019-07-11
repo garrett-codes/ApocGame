@@ -6,12 +6,16 @@
     visibility: hidden;
 }
 
-.logout {
+.logged_in {
     visibility: hidden;
 }
 
-.logged_in {
+.logout {
     visibility: hidden;
+  }
+
+.register {
+    visibility: visible;
 }
 
 #logo img {
