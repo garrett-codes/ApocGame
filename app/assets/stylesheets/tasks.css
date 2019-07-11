@@ -67,3 +67,17 @@ html {
     margin-left: 2em;
     padding: 0;
 }
+
+.you_won {
+    font-size: 2em;
+    color: #f6a70e;
+    text-align: center;
+}
+
+.link_to_user {
+    width: 5em;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f6a70e;
+    padding: .5em;
+}

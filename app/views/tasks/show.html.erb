@@ -19,8 +19,8 @@
 		</div>
 	<% elsif @task.level == 5 %>
 		<div>
-			<h2> You have won this campaign! </h2> 
-			<%= link_to "Done", user_path(@current_user) %>
+			<h2 class="you_won"> You have won this campaign! </h2> 
+			<div class="link_to_user"><%= link_to "Done", user_path(@current_user) %></div>
 		</div>
 	<% else %>	
 		<div class="task_form">

@@ -17,7 +17,7 @@ User.create(name:"Andy Morales", password:"login")
 Task.create(
 	character_id: 1, name: "Good to know you're still there...", 
 	task_type: "attack",
-	situation: "We got a busy day ahead of us. We've been told you are strong. We are definitely lacking in strength right now. Most of our community are not fighters. We need to go on a run. We're low on supplies and we need you to protect the team. Meet us at the front gate in 5 minutes. We're going to leave in 10.", 
+	situation: "We got a busy day ahead of us. We've been told you are strong. We are definitely lacking in strength right now. We have few fihters in our community. We're going on a run, we're low on supplies; we need you to protect the team. Meet us at the front gate in 5 minutes. We're going to leave in 10.", 
 	correct: "Get ready and go on the run.", 
 	wrong: "Use this time alone to get your stuff packed and escape this community because its falling apart fast!", 
 	consequence_of: true,
@@ -25,7 +25,7 @@ Task.create(
 #2
 Task.create(character_id: 1, name: "There isn't time for jokes...", 
 	task_type: "attack", 
-	situation: "Quit playing around. This is a serious matter. We've been told you are strong. We are definitely lacking in strength right now. Most of our community are not fighters. We need to go on a run and we need you to protect the team. Meet us at the front gate in 5 minutes. We're going to leave in 10.",
+	situation: "Quit playing around. This is a serious matter. We've been told you are strong. We are definitely lacking in strength right now. We have to go on a run and we need you to protect the team. Meet us at the front gate in 5 minutes. We're going to leave in 10.",
 	correct: "Apologize for jokinbg around and get ready to go.", 
 	wrong: "Make another joke before the he/she leaves.", 
 	consequence_of: false, 
@@ -36,7 +36,7 @@ Task.create(character_id: 1, name: "There isn't time for jokes...",
 Task.create(
 	character_id: 1, name: "Nice decision...", 
 	task_type: "attack",
-	situation: "We left the community and traveled to a supermarket that we have yet to look through. While the runner sneaks inside and tries to bring back some goods  you need to take out any zombies that could cause a problem. The runner is doing a good job sneaking around but the zombies are starting to form a wall at the only exit of the store.", 
+	situation: "We traveled to a supermarket that we have yet to look through. While the runner sneaks inside and tries to bring back some goods  you need to take out any zombies that could cause a problem. The runner is doing a good job sneaking around but the zombies are starting to form a wall at the only exit of the store.", 
 	correct: "Infiltrate the small herd of zombies at the exit and slowly kill them off while the runner continues to scavange.", 
 	wrong: "Kill a few zombies at the exit so that you can quickly sneak past the rest before they notice so you can help the runner get out of the supermarket.", 
 	consequence_of: true, 
@@ -46,7 +46,7 @@ Task.create(
 #4
 Task.create(character_id: 1, name: "Don't be a fool!", 
 	task_type: "attack", 
-	situation: "Of course jokes are nice to get a break from the harsh reality you are currently facing. However, there is a time and place. You're being left behind. We don't trust that you will take this important mission seriously enough. It would be best if you stay at the front gate and fend off any stray zombie coming toward the community.",
+	situation: "Of course jokes are nice to get a break from the harsh reality you are currently facing. However, there is a time and place. You're being left behind. We don't trust that you will take this important mission seriously enough. It's better if you stay at the front gate, fend off any stray zombie coming toward the community.",
 	correct: "Comply with the task at hand and silently pick off each zombie coming close to the community.", 
 	wrong: "Blow off your guard duties and catch up with the team even though they left you behind.", 
 	consequence_of: false,
@@ -82,7 +82,7 @@ Task.create(character_id: 1, name: "You shouldn't have gotten ahead of yourself.
 Task.create(
 	character_id: 1, name: "It is a good thing you listened this time...", 
 	task_type: "attack",
-	situation: "Right after the team moved north a herd of zombies moved perpendicular to their path. Luckily they just missed them, but if you went and followed them you would have been toast. Your team decided to come back because they felt they were not strong enough to take on the zombies. Maybe you can actually help next time.", 
+	situation: "Right after the team moved north, a herd of zombies moved perpendicular to their path. Luckily they just missed them, but if you went and followed them you would have been toast. Your team decided to come back because they felt they were not strong enough to take on the zombies. Maybe you can actually help next time.", 
 	correct: "Take your switch-blade and stealthily stab each stray zombie's brain. Lets try to watch out from them biting back.", 
 	wrong: "Lets play it safe and shoot them from the watch tower. You have a good shot so that should be a piece of cake.", 
 	consequence_of: true, 
@@ -102,7 +102,7 @@ Task.create(character_id: 1, name: "This was not a wise move...",
 Task.create(
 	character_id: 1, name: "Team work makes the dream work...", 
 	task_type: "attack",
-	situation: "Your team may not be the strongest but you cannot be responsible for everything. We lost a fellow team member but at least it wasn't you. Good job. it wasn't the cleanest but you're community is safe for now.", 
+	situation: "Your team may not be the strongest but you cannot be responsible for everything. We lost a fellow team member but at least it wasn't you. Good job. It wasn't the cleanest but you're community is safe for now.", 
 	correct: "Create a distraction, and allow the rest of your team to finish up the job.", 
 	wrong: "Pick off the remaining zombies so the runner has no problem exiting the supermarket.", 
 	consequence_of: true, 
@@ -158,7 +158,9 @@ Task.create(character_id: 1,
 	situation: "So you got to stay at the community while a team had to set out and risk their lives for more supplies. Good deal. They're radioing in right now and want you to go up to watch tower to check their six with the bionculars.", 
 	correct: "Go up to the watch tower and help them.", 
 	wrong: "Put your duties aside and try to get the community to follow you now. You're so smart so you should be the leader.", 
-	consequence_of: true, 
+	consequence_of: true,
+	next1: 15,
+	next2: 16, 
 	level: 3)
 
 #level end intellect
@@ -190,7 +192,9 @@ Task.create(character_id: 1,
 	situation: "We got a busy day ahead of us. We've been told you are fast. We are definitely lacking in speed right now. Most of our community is slow. We are going to have to go on a run. We're low on supplies and we need you to be our runner. Meet us at the front gate in 5 minutes. We're going to leave in 10.",  
 	correct: "Get ready and run to the gate", 
 	wrong: "While you are alone make a quick escape. This community seems weak, and you are so fast. They will never be able to catch up with you.", 
-	consequence_of: true, 
+	consequence_of: true,
+	next1: 19,
+	next2: 20, 
 	level: 2)
 #18
 Task.create(character_id: 1, 
@@ -199,7 +203,9 @@ Task.create(character_id: 1,
 	situation: "Quit playing around. This is a serious matter. We've been told you are fast. We are definitely lacking in speed right now. Most of our community is slow. We are going to have to go on a run. We're low on supplies and we need you to be our runner. Meet us at the front gate in 5 minutes. We're going to leave in 10.", 
 	correct: "Apologize for being a wise-ass and get ready to go.", 
 	wrong: "Make a quick escape while you are by yourself. They seem so mean. You're probably better off being by yourself.", 
-	consequence_of: false, 
+	consequence_of: false,
+	next1: 19,
+	next2: 20, 
 	level: 2)
 
 #level 3 speed
