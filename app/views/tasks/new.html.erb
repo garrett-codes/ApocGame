@@ -2,12 +2,19 @@
 <html>
 <head>
 	<title> Wake up!</title>
+	<%= stylesheet_link_tag "tasks.css" if controller_name == "tasks" %>
 </head>
 <body>
 	<h1> Wake up!</h1>
-	<p> Friend: We got a problem. We are going to need all of the help we can to get through this...</p>
-	<%= form_for @task do |f| %>
-		<% f.submit "Get on your feet" %>
-	<% end %>
+	<div class="situation">
+	<p> <b>Friend:</b> "We got a problem. We are going to need all of the help we can to get through this..."</p>
+	</div>
+
+	<!-- Why is this a form? -->
+	<div class="task_form">
+		<%= form_for @task do |f| %>
+			<% f.submit "Get on your feet" %>
+		<% end %>
+	</div>
 </body>
 </html>

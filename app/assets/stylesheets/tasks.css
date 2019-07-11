@@ -1,0 +1,53 @@
+html {
+    height: 100%;
+    background-image: url('/assets/landscape.png'); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover;
+    background-color: black;
+  }
+
+.game_on {
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+.game_on ul {
+    padding: 0;
+    margin: 0;
+}
+
+.game_on ul li {
+      display: inline-block;
+      background-color: white;
+      width: 4em;
+      text-align: center; 
+      padding: 0.5em;
+  }
+
+  .game_on ul li a {
+    color: black;
+  }
+
+  .game_on ul li:hover {
+    background-color: orange;
+  }
+
+ .situation {
+     width: 60%;
+     margin: 0 auto;
+     padding: 0;
+ }
+
+ .situation p {
+     font-size: 40px;
+     color: white;
+     text-align: justify;
+     padding: 0;
+ }
+
+  .task_form form {
+      margin: 25em auto;
+      padding: 0;
+  }

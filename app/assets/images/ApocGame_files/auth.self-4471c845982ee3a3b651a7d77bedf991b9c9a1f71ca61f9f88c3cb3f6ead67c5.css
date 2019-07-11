@@ -2,14 +2,6 @@
     visibility: hidden;
 }
 
-#signup {
-    visibility: hidden;
-}
-
-.logout {
-    visibility: hidden;
-}
-
 .logged_in {
     visibility: hidden;
 }

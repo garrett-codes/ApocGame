@@ -16,3 +16,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( auth.css )
 
 Rails.application.config.assets.precompile += %w( user.css )
+
+Rails.application.config.assets.precompile += %w( tasks.css )

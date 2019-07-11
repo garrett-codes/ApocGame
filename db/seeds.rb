@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
 Task.destroy_all
+
+User.create(name:"Brandon Lau", password:"login")
+User.create(name:"Eric Edgington", password:"login")
+User.create(name:"Andy Morales", password:"login")
 
 #level 2 attack
 Task.create(

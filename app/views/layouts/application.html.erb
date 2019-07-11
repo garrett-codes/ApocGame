@@ -8,7 +8,11 @@
 
   <body>
     <div class="top_bar">
-      <h3 id="logout"><%= link_to "Log Out", "/auth", method: :delete %></h3>
+      <ul>
+        <li><%= link_to "Register", "/users/new", :style=>'color: white;'%></li>
+        <li class="logout"><%= button_to "Log Out", "/auth", :style=>'color: white;float:right;', method: :delete %></li>
+      </ul>
+
     </div>
     <header> 
       <% if @logged_in %>

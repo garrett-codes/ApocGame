@@ -5,23 +5,13 @@
   <%= stylesheet_link_tag "auth.css" if controller_name == "auth" %>
 </head>
 <body>
-      <div id="logo"><img src = "assets/appocalypse.gif" alt=""/></div>
-    <%= form_tag "/auth" do %>
+    <div id="logo"><img src = "assets/appocalypse.gif" alt=""/></div>
+      <%= form_tag "/auth" do %>
       <%= label_tag 'Username' %>
       <%= text_field_tag :username %>
       <%= label_tag 'Password' %>
       <%= password_field_tag :password %>
       <%= submit_tag "Log In" %>
     <% end %>
-    
-	<h3> 
-		<%= flash[:message] %>
-	</h3>
-	<h1>Log In</h1>
-<%= form_tag "/auth" do %>
-  <%= text_field_tag :username %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Log In" %>
-<% end %>
 </body>
 </html>

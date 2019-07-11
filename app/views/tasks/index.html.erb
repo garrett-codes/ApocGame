@@ -2,14 +2,17 @@
 <html>
 <head>
 	<title>Begin Campaign</title>
+	<%= stylesheet_link_tag "tasks.css" if controller_name == "tasks" %>
 </head>
 <body>
+<div class="logo_pages"><img src = "assets/logo_pages.gif" alt="" style="width:15%;margin: 1em"/></div>
+
 	<h1> Do you want to begin this Campaign? </h1>
-	<div>
-		<%= button_to "Begin", new_task_path, method: :get %>
-	</div>
-	<div>
-		<%= button_to "Quit", user_path(@current_user), method: :get%>
-	</div>
+		<div class="game_on">
+			<ul>
+				<li><%= link_to "Begin", new_task_path%></li>
+				<li><%= link_to "Quit", user_path(@current_user)%></li>
+			</ul> 
+		</div>
 </body>
 </html>
