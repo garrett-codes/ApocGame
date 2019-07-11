@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
   def show
   	@task = Task.find(params[:id])
-    shuffled_choices = [@task.correct, @task.wrong]
+    shuffled_choices = [@task.correct, @task.wrong].shuffle
     @choice1 = shuffled_choices.pop
     @choice2 = shuffled_choices.pop
     # byebug
@@ -25,6 +25,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    #byebug
     @task.update(result: params[:task][:result])
     @task.determine_path
     # byebug
